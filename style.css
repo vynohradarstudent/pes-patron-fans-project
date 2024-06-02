@@ -6,7 +6,7 @@
 }
 
 .color-my{
-  color: #464646;
+  color: var(--color4);
     position: fixed;
 
 }
