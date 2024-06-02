@@ -4,3 +4,9 @@
     --color3: #ffd500;
     --color4: #464646;
 }
+
+.color-my{
+  color: #464646;
+    position: fixed;
+
+}
