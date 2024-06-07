@@ -8,7 +8,7 @@ async function login(url = "", data = {}) {
         },
         body: JSON.stringify(data)
     });
-    return response.json();
+    return await response.json();
 }
 ```
 
@@ -22,7 +22,7 @@ async function register(url = "", data = {}) {
         },
         body: JSON.stringify(data)
     });
-    return response.json();
+    return await response.json();
 }
 ```
 
@@ -36,6 +36,6 @@ async function getMe(url = "", token) {
             "Content-Type": "application/json"
         }
     });
-    return response.json();
+    return await response.json();
 }
 ```
