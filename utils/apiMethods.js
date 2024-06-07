@@ -1,8 +1,5 @@
-import * as paths from './paths.js';
-
 /**
  * Метод для авторизації
- * @param {string} url URL для авторизації користувача
  * @param {object} data Об'єкт з електронною адресою та паролем користувача
  * @param {string} data.email Електронна адреса користувача
  * @param {string} data.password Пароль користувача
@@ -11,16 +8,16 @@ import * as paths from './paths.js';
  * @returns {string} Object.accessToken Токен доступу для авторизованого користувача
  * @returns {string} Object.refreshToken Токен оновлення для поновлення токену доступу
  */
-async function login(url = "", data = {}) {
+async function login(data = {}) {
     const response = await fetch(
-        paths.LOGIN_URL,
+        LOGIN_URL,
         {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
     return await response.json();
 }
 
@@ -38,7 +35,7 @@ async function login(url = "", data = {}) {
  */
 async function register(data = {}) {
     const response = await fetch(
-        paths.REGISTER_URL,
+        REGISTER_URL,
         {
             method: "POST",
             headers: {
@@ -61,7 +58,7 @@ async function register(data = {}) {
  */
 async function getMe(token) {
     const response = await fetch(
-        paths.GET_ME_URL,
+        GET_ME_URL,
         {
             method: "GET",
             headers: {
@@ -82,7 +79,7 @@ async function getMe(token) {
  */
 async function refreshToken(refreshToken) {
     const response = await fetch(
-        paths.REFRESH_TOKEN_URL,
+        REFRESH_TOKEN_URL,
         {
             method: "POST",
             headers: {

@@ -67,16 +67,3 @@ const CREATE_GENRE_URL = "https://maker-time-server-6dc0ba9fb22f.herokuapp.com/a
  * @constant {string}
  */
 const GET_ALL_GENRES_URL = "https://maker-time-server-6dc0ba9fb22f.herokuapp.com/api/genre/all";
-
-export {
-    LOGIN_URL,
-    REGISTER_URL,
-    REFRESH_TOKEN_URL,
-    GET_ALL_GENRES_URL,
-    GET_ME_URL,
-    CREATE_GAME_URL,
-    CREATE_GENRE_URL,
-    GET_GAME_BY_ID_URL,
-    GET_ALL_GAMES_URL,
-    GET_ALL_USERS_URL
-};
