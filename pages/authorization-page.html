@@ -1,6 +1,12 @@
 <html>
 <head>
     <link rel="stylesheet" href="../styles/style.css">
+
+    <script src="../utils/jquery-3.7.1.js"></script>
+    <script src="../utils/paths.js"></script>
+    <script src="../utils/apiMethods.js"></script>
+
+    <script src="../scripts/script.js" defer></script>
     <meta charset="UTF-8">
 </head>
 <body>
@@ -25,21 +31,23 @@
     <div class="cont log-in">
         <h1> Вхід в акаунт </h1>
         <p> Введіть адресу електронної пошти: </p>
-        <input type="email">
+        <input type="email" id="login-email" value = "admin@admin.com">
         <p> Введіть пароль: </p>
-        <input type="text">
-        <button type="submit"> Увійти </button>
+        <input type="text" id="login-password" value="ADMIN123!">
+        <button> Увійти </button>
     </div>
     <hr>
     <div class="cont sign-up">
         <h1> Не маєте акаунту? Зареєструватись </h1>
+        <p> Введіть ім'я: </p>
+        <input type="text" id="signup-username">
         <p> Введіть адресу електронної пошти: </p>
-        <input type="email">
+        <input type="email" id="signup-email">
         <p> Введіть пароль: </p>
-        <input type="text">
+        <input type="text" id="signup-password">
         <p> Підтвердіть пароль: </p>
-        <input type="text">
-        <button type="submit"> Зберегти </button>
+        <input type="text" id="signup-passwordConf">
+        <button> Зберегти </button>
     </div>
 </form>
 
