@@ -1,19 +1,331 @@
 :root {
-    --color1: white;
-    --color2: black;
-    --color3: #ffd500;
-    --color4: #464646;
+    --color1: black;
+    --color2: white;
+    --color3: rgb(255, 196, 0);
+    --color4: rgb(66, 66, 66);
+    --color5: rgb(148, 148, 148);
+
+    --font1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --font2: Arial, Helvetica, sans-serif;
 }
 
-.color-my{
-  color: var(--color4);
-    position: fixed;
-
+* {
+    margin: 0;
+    padding: 0;
 }
-.register{
-    color: var(--color4);
-    position: fixed;
+
+
+/* HEADER */
+
+header {
+    width: 100%;
+    height: 80px;
+    background-color: var(--color3);
+    padding: 10px;
+    border-bottom: 3px solid var(--color4);
+}
+
+header .main {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .main img {
+    height: 60px;
+    width: 60px;
+}
+
+header .main .navbar {
+    height: 100%;
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .main .navbar a {
+    text-decoration: none;
+    text-decoration: underline;
+    font-size: 23;
+    font-family: var(--font1);
+    font-weight: 600;
+    color: var(--color1);
+}
+
+header .main input {
+    height: 60%;
+    background-color: var(--color4);
+    border: 2px solid var(--color1);
+    border-radius: 10px;
+    padding: 3px;
+}
+
+header .main input::placeholder {
+    color: var(--color2);
+    font-size: 14;
+    font-family: var(--font2);
+}
+
+header .main .profile {
+    height: 100%;
+    width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 20px;
+}
+header .main .profile a {
+    text-decoration: none;
+    color: var(--color4);
+    font-family: var(--font2);
+    font-size: 17;
+}
+
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--color4);
+    border-top: 2px solid var(--color5);
+    color: var(--color2);
+}
+
+footer h1 {
+    font-family: var(--font1);
+    margin-bottom: 20px;
+}
+
+footer .footer-info {
+    display: flex;
+    width: calc(100% - 40px);
+    justify-content: space-between;
+}
+
+footer .footer-info .info-box {
+    width: auto;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-family: var(--font2);
+}
+
+footer .footer-info .info-box a {
+    text-decoration: none;
+    color: var(--color2);
+}
+
+
+/* AUTHORISATION PAGE */
+
+form {
+    width: 100%;
+    padding: 50px 30px;
+    background-color: var(--color1);
+    position: relative;
+}
+
+form h1 {
+    color: var(--color2);
+    font-family: var(--font1);
+}
+
+form .cont {
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+form .cont p {
+    color: var(--color5);
+    font-family: var(--font2);
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+form .cont input {
+    background-color: var(--color5);
+    border: 1px solid var(--color2);
+    border-radius: 5px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+form .cont button {
+    background-color: var(--color2);
+    height: 30px;
+    width: 90px;
+    border: 1px solid var(--color5);
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+
+/* MAIN PAGE */
+
+.content {
+    background-color: var(--color1);
+    display: flex;
+    width: 100%;
+    padding: 10px;
+}
+
+.content .left-cont {
+    width: 25%;
+}
+
+.content .left-cont h2 {
+    color: var(--color3);
+    font-size: 30px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.content .left-cont ul {
+    list-style: none;
+}
+
+.content .left-cont a {
+    color: var(--color2);
+    text-decoration: none;
+}
+
+.content .main-cont {
+    color: var(--color2);
+}
+
+.content .main-cont .carousel-cont {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    background-color: var(--color4);
+}
+
+.content .main-cont .carousel-cont .carousel {
+    width: 60%;
+}
+
+.content .main-cont .carousel-cont .game-description {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content .main-cont .carousel-cont .game-description .desc-cont1 h2 {
+    font-size: 25px;
+}
+
+.content .main-cont .carousel-cont .game-description .desc-cont1 h3 {
+    font-size: 18px;
+}
+
+.content .main-cont .carousel-cont .game-description .desc-cont2 {
+    display: flex;
+}
+
+.content .main-cont .carousel-cont .game-description .desc-cont2 p {
+    margin-bottom: 0;
+}
+
+.content .main-cont .carousel-cont .game-description .desc-cont2 button {
+    background-color: var(--color3);
+    width: 90px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px solid var(--color1);
+    margin-right: 10px;
+}
+
+.content .main-cont .games-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.content .main-cont .games-list .game-card {
+    border: 2px solid var(--color2);
+}
+
+.content .main-cont .games-list .game-card img {
+    width: 100%;
+    height: 130px;
+}
+
+.content .main-cont .games-list .game-card h2 {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.content .main-cont .games-list .game-card p {
+    margin: 5px;
+}
+
+.content .main-cont .games-list .game-card button {
+    width: 100%;
+    height: 30px;
+    font-weight: 600;
+    background-color: var(--color3);
+    border: 0;
+    border-top: 2px solid var(--color2);
+}
+
+
+/* GAME PAGE */
+
+.game-page-content {
+    background-color: var(--color1);
+    color: var(--color2);
+}
+
+.game-page-content .game-description {
+    padding: 20px;
+}
+
+.game-page-content .game-description h1 {
+    font-size: 40px;
+}
+
+.game-page-content .game-description a {
+    text-decoration: none;
+    color: var(--color3);
+}
+
+.game-page-content .game-description .pre-desc {
+    color: var(--color5);
+    font-weight: 700;
+}
+
+.game-page-content .game-description .buy-cont {
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.game-page-content .game-description .buy-cont p {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.game-page-content .game-description .buy-cont button {
+    height: 60px;
+    width: 150px;
+    font-size: 25px;
+    margin-right: 10px;
+    background-color: var(--color3);
+    border-radius: 5px;
+    border: 2px solid var(--color5);
 }
