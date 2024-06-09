@@ -1,6 +1,5 @@
-
-$(document).ready(()=>{
-    $('.log-in button').click(async e => {
+$(document).ready(function (){
+    $('.log-in button').click(async function(e){
         let data = {
             email: $('#login-email').val(),
             password: $('#login-password').val()
@@ -15,9 +14,9 @@ $(document).ready(()=>{
     })
 
 
-    $('.sign-up button').click(async e => {
+    $('.sign-up button').click(async function(e) {
         let data = {
-            displayName: $('#singup-username').val(),
+            display_name: $('#singup-username').val(),
             email: $('#singup-email').val(),
             password: $('#signup-password').val(),
             confirmPassword: $('#signup-passwordConf').val()
