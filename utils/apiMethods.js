@@ -89,3 +89,16 @@ async function refreshToken(refreshToken) {
         });
     return await response.json();
 }
+
+async function getAllGames() {
+    const response = await fetch(
+        GET_ALL_GAMES_URL,
+        {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+    return await response.json();
+}
+
