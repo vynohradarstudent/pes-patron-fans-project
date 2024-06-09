@@ -33,7 +33,7 @@ async function getAuthorize() {
         refreshToken: localStorage.getItem("refreshToken")
     }
 
-    if (token.accessToken !== 'null') {
+    if (token.accessToken !== 'null' && token.refreshToken != null) {
         try {
             let userData =  getMe(token.accessToken);
 
