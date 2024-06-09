@@ -16,7 +16,7 @@ $(document).ready(function (){
 
     $('.sign-up button').click(async function(e) {
         let data = {
-            display_name: $('#singup-username').val(),
+            displayName: $('#signup-username').val(),
             email: $('#singup-email').val(),
             password: $('#signup-password').val(),
             confirmPassword: $('#signup-passwordConf').val()
