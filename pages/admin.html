@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+<header>
+    <div class="main">
+        <a href="main-page.html">
+            <img src="#" class="logo">
+        </a>
+        <div class="navbar">
+            <a href="#" class="navbar-option"> МАГАЗИН </a>
+            <a href="#" class="navbar-option"> СПІЛЬНОТА </a>
+            <a href="#" class="navbar-option"> ТЕХНІЧНА ПІДТРИМКА </a>
+        </div>
+        <input type="text" placeholder="Пошук гри">
+        <div class="profile">
+            <a href="authorization-page.html"> Увійти </a>
+        </div>
+    </div>
+</header>
+<h1>The Admin</h1>
+<h2>Створення гри</h2>
+<form id="gameForm">
+    <label for="gameName">Назва гри:</label>
+    <input type="text" id="gameName" name="gameName" required>
+
+    <label for="gameDescription">Опис гри:</label>
+    <textarea id="gameDescription" name="gameDescription" required></textarea>
+
+    <label for="gameCategory">Категорія:</label>
+    <select id="gameCategory" name="gameCategory" required>
+        <option value="action">Екшн</option>
+        <option value="adventure">Пригоди</option>
+        <option value="puzzle">Головоломка</option>
+        <option value="strategy">Стратегія</option>
+    </select>
+
+    <label for="gameImage">Завантажити зображення:</label>
+    <input type="file" id="gameImage" name="gameImage" accept="image/*" required>
+
+    <button type="submit">Створити гру</button>
+</form>
+<div id="output"></div>
+<footer>
+    <h1> Footer </h1>
+    <div class="footer-info">
+        <div class="info-box">
+            <a href="#"> Про нас </a>
+            <a href="#"> Технічна підтримка </a>
+            <a href="#"> Умови використання </a>
+        </div>
+        <div class="info-box">
+            <p> (номер телефону) </p>
+            <p> (адреса ел. пошти) </p>
+            <p> (адреса) </p>
+        </div>
+        <div class="info-box">
+            <a href="#"> Facebook </a>
+            <a href="#"> Telegram </a>
+            <a href="#"> YouTube </a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+<script>
+    document.getElementById('gameForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const gameName = document.getElementById('gameName').value;
+        const gameDescription = document.getElementById('gameDescription').value;
+        const gameCategory = document.getElementById('gameCategory').value;
+        const gameImage = document.getElementById('gameImage').files[0];
+
+        if (gameImage) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageUrl = e.target.result;
+
+                const output = `
+                <h2>${gameName}</h2>
+                <p><strong>Опис:</strong> ${gameDescription}</p>
+                <p><strong>Категорія:</strong> ${gameCategory}</p>
+                <img src="${imageUrl}" alt="Game Image" style="max-width: 100%;">
+            `;
+
+                document.getElementById('output').innerHTML = output;
+            }
+            reader.readAsDataURL(gameImage);
+        }
+    });
+</script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-top: 10px;
+    }
+
+    input, textarea, select, button {
+        margin-top: 5px;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #output {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #e7f3fe;
+        border: 1px solid #b3d8fd;
+        border-radius: 5px;
+    }
+</style>
