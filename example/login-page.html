@@ -14,8 +14,36 @@
     <script src="../utils/apiMethods.js"></script>
 
     <script src="login-page.js"></script>
+    <script src="header.js"></script>
 </head>
 <body>
+
+<header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+        </ul>
+    </nav>
+
+    <div class="auth">
+        <ul>
+            <li><a href="#"> login </a></li>
+            <li><a href="#"> register </a></li>
+        </ul>
+    </div>
+
+    <div class="user-info">
+        <ul>
+            <li id="username"></li>
+            <li>
+                <button id="logout-btn" type="button"> Logout</button>
+            </li>
+        </ul>
+    </div>
+</header>
 
 <div class="login">
     <input id="email" type="email" placeholder="email">
