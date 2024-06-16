@@ -48,7 +48,7 @@ header .main .navbar {
 header .main .navbar a {
     text-decoration: none;
     text-decoration: underline;
-    font-size: 23;
+    font-size: 23px;
     font-family: var(--font1);
     font-weight: 600;
     color: var(--color1);
@@ -64,7 +64,7 @@ header .main input {
 
 header .main input::placeholder {
     color: var(--color2);
-    font-size: 14;
+    font-size: 14px;
     font-family: var(--font2);
 }
 
@@ -74,13 +74,13 @@ header .main .profile {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 40px;
 }
 header .main .profile a {
     text-decoration: none;
     color: var(--color4);
     font-family: var(--font2);
-    font-size: 17;
+    font-size: 17px;
 }
 
 

@@ -44,7 +44,6 @@ async function register(data = {}) {
             body: JSON.stringify(data)
         });
 
-    console.log(response)
     return await response.json();
 }
 
