@@ -8,9 +8,8 @@ $(document).ready(async function () {
       <div class="game-card">
                 <img src="${e.titleImageUrl}">
                 <h2> ${e.title} </h2>
-                <h3>  ${e.releaseDate} </h3>
-                <p> ${e.price} </p>
-                <a href="../pages/game.html?id=${e.id}"> <button> Придбати </button> </a>
+                <p> ${e.price}$ </p>
+                <a href="/pes-patron-fans-project/pages/game-page.html?id=${e.id}"> <button> Придбати </button> </a>
       </div>
     `)
     })

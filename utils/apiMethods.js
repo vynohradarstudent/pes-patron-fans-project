@@ -104,3 +104,16 @@ async function getAllGames() {
     return await response.json();
 }
 
+
+async function getGameById(id) {
+    const response = await fetch(
+        GET_GAME_BY_ID_URL+ id,
+        {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+    return await response.json();
+}
+
