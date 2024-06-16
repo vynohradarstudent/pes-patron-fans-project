@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26cf042a-377d-492b-90e6-80af629dea74" name="Changes" comment="Add">
-      <change afterPath="$PROJECT_DIR$/images/Logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    <list default="true" id="26cf042a-377d-492b-90e6-80af629dea74" name="Changes" comment="Add Logo and a lot of else">
       <change beforePath="$PROJECT_DIR$/pages/game-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/game-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/main-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/apiMethods.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/apiMethods.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +66,7 @@
       <workItem from="1717938029443" duration="7222000" />
       <workItem from="1717945379084" duration="1823000" />
       <workItem from="1718542967816" duration="1985000" />
-      <workItem from="1718544963675" duration="4712000" />
+      <workItem from="1718544963675" duration="4858000" />
     </task>
     <task id="LOCAL-00001" summary="Створено main-page, game-page, authorisation-page, допроцьовано style.css.">
       <option name="closed" value="true" />
@@ -113,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718545074098</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add Logo and a lot of else">
+      <option name="closed" value="true" />
+      <created>1718549772428</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1718549772428</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +127,7 @@
     <MESSAGE value="script.js" />
     <MESSAGE value="Fix signUP missing" />
     <MESSAGE value="Add" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add" />
+    <MESSAGE value="Add Logo and a lot of else" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Logo and a lot of else" />
   </component>
 </project>
