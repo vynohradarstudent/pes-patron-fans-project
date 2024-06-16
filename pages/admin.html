@@ -25,23 +25,47 @@
 <h1>The Admin</h1>
 <h2>Створення гри</h2>
 <form id="gameForm">
-    <label for="gameName">Назва гри:</label>
-    <input type="text" id="gameName" name="gameName" required>
+    <label for="title">Назва гри:</label>
+    <input type="text" id="title" name="title" required>
 
-    <label for="gameDescription">Опис гри:</label>
-    <textarea id="gameDescription" name="gameDescription" required></textarea>
+    <label for="description">Опис гри:</label>
+    <textarea id="description" name="description" required></textarea>
+
+    <label for="price">Ціна:</label>
+    <input type="number" id="price" name="price" required><br><br>
+
+    <label for="releaseDate">Дата виходу:</label>
+    <input type="date" id="releaseDate" name="releaseDate" required><br><br>
+
+    <label for="url1">URL 1:</label>
+    <input type="text" id="url1" name="url1"><br><br>
+
+    <label for="url2">URL 2:</label>
+    <input type="text" id="url2" name="url2"><br><br>
+
+    <label for="url3">URL 3:</label>
+    <input type="text" id="url3" name="url3"><br><br>
+
+    <label for="url4">URL Image:</label>
+    <input type="text" id="url4" name="url4"><br><br>
+
+    <button type="button" onclick="submitForm()">Відправити</button>
 
     <label for="gameCategory">Категорія:</label>
     <select id="gameCategory" name="gameCategory" required>
         <option value="action">Екшн</option>
         <option value="adventure">Пригоди</option>
+        <option value="simulator">Симулятор</option>
         <option value="puzzle">Головоломка</option>
         <option value="strategy">Стратегія</option>
+        <option value="role">Роль</option>
+        <option value="arcade">Аркада</option>
+        <option value="shooter">Шутер</option>
+        <option value="race">Перегон</option>
     </select>
 
-    <label for="gameImage">Завантажити зображення:</label>
-    <input type="file" id="gameImage" name="gameImage" accept="image/*" required>
-
+    <!--  <label for="gameImage">Завантажити зображення:</label>
+    <input type="file" id="gameImage" name="gameImage" accept="image/*" required> *-->
     <button type="submit">Створити гру</button>
 </form>
 <div id="output"></div>
@@ -68,30 +92,68 @@
 </body>
 </html>
 <script>
-    document.getElementById('gameForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+    function submitForm() {
+        // Отримуємо значення з полів форми
+        const id = document.getElementById('id').value;
+        const title = document.getElementById('title').value;
+        const description = document.getElementById('description').value;
+        const price = document.getElementById('price').value;
+        const releaseDate = document.getElementById('releaseDate').value;
+        const titleImageUrl = document.getElementById('titleImageUrl').value;
+        const screenshots = document.getElementById('screenshots').value.split(',').map(s => s.trim());
+        const genres = document.getElementById('genres').value.split(',').map(g => g.trim());
+        const averageRating = document.getElementById('averageRating').value;
 
-        const gameName = document.getElementById('gameName').value;
-        const gameDescription = document.getElementById('gameDescription').value;
-        const gameCategory = document.getElementById('gameCategory').value;
-        const gameImage = document.getElementById('gameImage').files[0];
+        // Створюємо об'єкт з даними
+        const gameData = {
+            id: parseInt(id),
+            title: title,
+            description: description,
+            price: parseFloat(price),
+            releaseDate: releaseDate,
+            titleImageUrl: titleImageUrl,
+            screenshots: screenshots,
+            genres: genres,
+            averageRating: parseFloat(averageRating)
+        };
 
-        if (gameImage) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const imageUrl = e.target.result;
+        // Використовуємо Fetch API для надсилання даних на сервер
+        fetch('https://yourserver.com/api/games', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(gameData)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Успіх:', data);
+            })
+            .catch((error) => {
+                console.error('Помилка:', error);
+            });
+    }
+</script>
+<script>
+    const express = require('express');
+    const bodyParser = require('body-parser');
 
-                const output = `
-                <h2>${gameName}</h2>
-                <p><strong>Опис:</strong> ${gameDescription}</p>
-                <p><strong>Категорія:</strong> ${gameCategory}</p>
-                <img src="${imageUrl}" alt="Game Image" style="max-width: 100%;">
-            `;
+    const app = express();
+    const port = 3000;
 
-                document.getElementById('output').innerHTML = output;
-            }
-            reader.readAsDataURL(gameImage);
-        }
+    app.use(bodyParser.json());
+
+    app.post('/api/games', (req, res) => {
+        const gameData = req.body;
+        console.log('Отримані дані гри:', gameData);
+
+        // Тут можна додати логіку для збереження даних гри в базу даних
+
+        res.json({ message: 'Дані гри успішно отримані', gameData });
+    });
+
+    app.listen(port, () => {
+        console.log(`Сервер запущено на порту ${port}`);
     });
 </script>
 <style>
@@ -122,6 +184,7 @@
 
     label {
         margin-top: 10px;
+        color: white
     }
 
     input, textarea, select, button {
