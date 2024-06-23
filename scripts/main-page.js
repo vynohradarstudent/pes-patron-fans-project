@@ -2,6 +2,22 @@ $(document).ready(async function () {
 
     let games = await getAllGames()
 
+
+    games.slice(0,1).forEach(game =>{
+        $(".carousel-inner").append(`
+              <div class="carousel-item active">
+                        <img src="${game.titleImageUrl}" class="d-block w-100" alt="...">
+              </div>
+        `)
+    })
+    games.slice(1,3).forEach(game =>{
+        $(".carousel-inner").append(`
+              <div class="carousel-item">
+                        <img src="${game.titleImageUrl}" class="d-block w-100" alt="...">
+              </div>
+        `)
+    })
+
     games.forEach(e => {
 
         $(".games-list").append(`

@@ -329,3 +329,11 @@ form .cont button {
     border-radius: 5px;
     border: 2px solid var(--color5);
 }
+.carousel-inner{
+    width: 100%;
+    height: 100%;
+    margin-right: 10px;
+    background-color: var(--color3);
+    border-radius: 5px;
+    border: 2px solid var(--color5);
+}

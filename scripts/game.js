@@ -1,7 +1,6 @@
 $(document).ready(async function () {
     let variable = window.location.search
     let game = await getGameById(variable.split("=")[1])
-
     $(".game-page-content").append(
         `
         <div class="game-description">
@@ -9,7 +8,6 @@ $(document).ready(async function () {
         <p class="pre-desc">  ${game.releaseDate}  </p>
         <p> ${game.description} </p>
         <p class="rating"> Рейтинг: ${game.averageRating}/5 </p>
-        <a href="https://www.youtube.com/embed/o4789Ba2HYo?si=XtDIfk_FTNgJhZP3"> Дивитися трейлер </a>
         <div class="buy-cont">
             <button> Придбати </button>
             <p> ${game.price}$ </p>
