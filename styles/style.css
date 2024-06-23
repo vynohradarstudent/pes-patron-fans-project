@@ -329,3 +329,18 @@ form .cont button {
     border-radius: 5px;
     border: 2px solid var(--color5);
 }
+
+.facebook {
+    height: 30px;
+    width: 30px;
+}
+
+.telegram {
+    height: 30px;
+    width: 30px;
+}
+
+.youtube {
+    height: 30px;
+    width: 30px;
+}

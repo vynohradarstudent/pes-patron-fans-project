@@ -1,4 +1,8 @@
 $(document).ready(async function () {
+
+
+    // LOGIN
+
     $('.log-in button').click(async function (e) {
         let data = {
             email: $('#login-email').val(),
@@ -37,6 +41,8 @@ $(document).ready(async function () {
     })
 
 
+    // REGISTRATION
+
     $('.sign-up button').click(async function (e) {
         let data = {
             displayName: $('#signup-username').val(),
@@ -55,8 +61,21 @@ $(document).ready(async function () {
         localStorage.setItem("accessToken", token.accessToken);
         localStorage.setItem("refreshToken", token.refreshToken);
     })
-})
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+})
 
 async function getAuthorize() {
     let token = {
